@@ -32,12 +32,6 @@ class OwnersController < ApplicationController
     @owner = Owner.find(params[:id])
     @owner.update(params[:owner])
 
-    if !params[:owner].keys.include?("pet_ids")
-      params[:owner]["pet_ids"] = []
-    end
-
-    @owner = Owner.find(params[:id])
-    @owner.update(params["owner"])
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
     end
