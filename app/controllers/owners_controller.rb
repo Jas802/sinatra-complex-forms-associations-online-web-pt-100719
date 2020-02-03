@@ -9,8 +9,7 @@ class OwnersController < ApplicationController
     @pets = Pet.all
     erb :'/owners/new'
   end
-  redirect "/owners/:id"
-  end
+
 
   post '/owners' do
     @owner = Owner.create(params[:owner])
